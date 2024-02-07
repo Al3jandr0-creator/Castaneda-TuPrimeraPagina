@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <a href={% url "inicio" %}>Inicio</a>
+    <a href={% url "clientes" %}>Clientes</a>
+
     <h1>Creacion de Clientes</h1>
 
     <form action={% url "crear_cliente"%} method="POST">

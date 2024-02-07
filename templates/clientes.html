@@ -8,12 +8,10 @@
 <body>
     <nav>
         <a href={% url "inicio" %}>Inicio</a>
-        <a href={% url "clientes" %}>Clientes</a>
+        <a href={% url "crear_cliente" %}>Crear clientes</a>
     </nav>
+
     <h1>Listado de clientes</h1>
-    <ul>
-        {{clientes}}
-    </ul>
     <ul>
         {% for cliente  in clientes  %}
             <li>{{cliente}}</li>
