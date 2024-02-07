@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Creacion de Clientes</h1>
+
+    <form action={% url "crear_cliente"%} method="POST">
+        {% csrf_token %}
+        <table>
+            {{formulario}}
+        </table>
+    
+        <input type="submit" value="Crear Cliente">
+
+    </form>
+</body>
+</html> 
