@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block header %}
+    Creacion de Clientes
+{% endblock header %}
+
+{% block main %}
+    <form action={% url "crear_cliente"%} method="POST">
+        {% csrf_token %}
+        <table>
+            {{formulario}}
+        </table>
+    
+        <input type="submit" value="Crear Cliente">
+
+    </form>
+</body>
+{% endblock main %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block h1_header %}
+Datos del cliente {{cliente.id}}
+{% endblock h1_header %}
+
+{% block main %}
+<ul>
+    <li> Nombre: {{cliente.nombre}} </li>
+    <li> Apellido: {{cliente.apellido}} </li>
+    <li> Edad: {{cliente.edad}} </li>
+    <li> Gastos: {{cliente.gastos}} </li>
+</ul>
+{% endblock main %}

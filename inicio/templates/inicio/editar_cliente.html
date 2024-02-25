@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block header %}
+    Edicion de cliente {{cliente.id}}
+{% endblock header %}
+
+{% block main %}
+    <form action="{% url "editar_cliente" cliente.id %}" method="POST">
+
+        {% csrf_token %}
+        <table>
+            {{formulario}}
+        </table>
+    
+        <input type="submit" value="Editar cliente">
+
+    </form>
+</body>
+{% endblock main %}
+
