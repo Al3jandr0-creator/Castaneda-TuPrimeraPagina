@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block header %}
+    Creacion de comercios
+{% endblock header %}
+
+{% block main %}
+    <form action={% url "crear_comercio"%} method="POST">
+        {% csrf_token %}
+        <table>
+            {{form}}
+        </table>
+    
+        <input type="submit" value="Crear Comercio">
+
+    </form>
+</body>
+{% endblock main %}

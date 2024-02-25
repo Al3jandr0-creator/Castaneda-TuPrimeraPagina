@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block h1_header %}
+Listado de comercios
+{% endblock h1_header %}
+
+{% block main %}
+<a href={% url "crear_comercio" %}>Crear Comercio</a>
+{% comment %} <form action={%  url "comercios" %}>
+    {{formulario}}
+    <input type="submit" value="Buscar">
+</form> {% endcomment %}
+{% if comercios %}
+<ul>
+    {% for comercio  in comercios  %}
+        <li>{{comercio}} |
+            {% comment %} <a href={% url 'ver_comercio' cliente.id %}>Ver</a> |
+            <a href={% url 'eliminar_comercio' cliente.id %}>Eliminar</a> |
+            <a href={% url 'editar_comercio' cliente.id %}>Editar</a>| {% endcomment %}
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron comercios relacionados con la busqueda.</p>
+{% endif %}
+{% endblock main %}
+   

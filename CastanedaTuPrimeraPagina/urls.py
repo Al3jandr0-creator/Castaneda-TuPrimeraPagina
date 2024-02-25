@@ -21,5 +21,5 @@ from inicio.views import inicio, mostrar_horario
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('inicio.urls')),
-    
+    path('locales/', include('locales.urls')),   
 ]
