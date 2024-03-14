@@ -13,11 +13,11 @@ Listado de comercios
 </form> {% endcomment %}
 {% if comercios %}
 <ul>
-    {% for comercio  in comercios  %}
+    {% for comercio in comercios %}
         <li>{{comercio}} |
-            {% comment %} <a href={% url 'ver_comercio' cliente.id %}>Ver</a> |
-            <a href={% url 'eliminar_comercio' cliente.id %}>Eliminar</a> |
-            <a href={% url 'editar_comercio' cliente.id %}>Editar</a>| {% endcomment %}
+            <a href="{% url 'detalle_comercio' comercio.id %}">Detalle</a>
+            <a href={% url 'editar_comercio' comercio.id %}>Editar</a>|
+            <a href={% url 'eliminar_comercio' comercio.id %}>Eliminar</a> |  
         </li>
     {% endfor %}
 </ul>

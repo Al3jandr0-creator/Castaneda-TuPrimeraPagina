@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+  
+{% block header %}
+   <h1>Eliminar comercio</h1>
+{% endblock header %}
+
+{% block main %}
+    <form action={% url "eliminar_comercio" comercio.id %} method="POST">
+        {% csrf_token %}
+        <p>
+            Confirma la eliminacion del comercio {{comercio}}
+        </p>
+      
+        <input type="submit" value="Confirmar">
+
+    </form>
+</body>
+{% endblock main %}

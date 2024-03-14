@@ -2,17 +2,17 @@
 {% extends "base.html" %}
 
 {% block header %}
-    <h1>Creacion de comercios</h1>
+   <h1>Editar Perfil</h1>
 {% endblock header %}
 
 {% block main %}
-    <form action={% url "crear_comercio"%} method="POST">
+    <form action={% url "editar_perfil"%} method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
-            {{form}}
+            {{formulario}}
         </table>
     
-        <input type="submit" value="Crear Comercio">
+        <input type="submit" value="Editar">
 
     </form>
 </body>

@@ -6,11 +6,14 @@ from django.template import Template
 from inicio.models import Cliente
 import random
 from inicio.forms import FormularioCreacionCliente, FormularioBusquedaCliente, FormularioEdicionCliente
+from django.contrib.auth.decorators import login_required
 
 def inicio(request):
     return render(request, 'inicio/inicio.html')
 
- 
+def acerca_de_mi(request):
+    return render(request, 'inicio/acercademi.html') 
+
 def clientes(request):
     formulario = FormularioBusquedaCliente(request.GET)
     if formulario.is_valid():
@@ -37,11 +40,13 @@ def crear_cliente(request):
         
     return render(request, 'inicio/crear_cliente.html', {'formulario':formulario})
 
+@login_required
 def eliminar_cliente(request, id_cliente):
     cliente = Cliente.objects.get(id=id_cliente)
     cliente.delete()
     return redirect('clientes')
-    
+
+@login_required    
 def editar_cliente(request, id_cliente):
     cliente = Cliente.objects.get(id=id_cliente)
     formulario = FormularioEdicionCliente(initial={'nombre': cliente.nombre, 'apellido': cliente.apellido, 'edad':cliente.edad, 'gastos':cliente.gastos})

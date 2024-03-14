@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block h1_header %}
+Detalle del comercio: {{comercios}}
+{% endblock h1_header %}
+
+{% block main %}
+<ul>
+    <li>Representante legal: {{comercio.representante_legal}}</li>
+    <li>Nombre comercio: {{comercio.nombre_comercio}}</li>
+    <li>Fecha de apertura: {{comercio.fecha_apertura}} </li>
+    <a href={% url 'editar_comercio' comercio.id %}>Editar</a>|
+    <a href={% url 'eliminar_comercio' comercio.id %}>Eliminar</a> |
+</ul>
+
+{% endblock main %}
