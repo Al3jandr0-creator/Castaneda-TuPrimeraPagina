@@ -11,5 +11,8 @@ Datos del cliente {{cliente.id}}
     <li> Apellido: {{cliente.apellido}} </li>
     <li> Edad: {{cliente.edad}} </li>
     <li> Gastos: {{cliente.gastos}} </li>
+        <a href={% url 'editar_cliente' cliente.id %}>Editar</a>|
+        <a href={% url 'eliminar_cliente' cliente.id %}>Eliminar</a> |
+
 </ul>
 {% endblock main %}
