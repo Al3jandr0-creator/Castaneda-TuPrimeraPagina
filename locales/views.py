@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
 from locales.models import Comercio
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import CrearComercioForm
  
 class Comercios(ListView):
     model = Comercio
@@ -13,8 +14,8 @@ class Comercios(ListView):
 
 class CrearComercio(CreateView):
     model = Comercio
+    form_class = CrearComercioForm
     template_name = "comercios/crear_comercio.html"
-    fields = ['representante_legal', 'nombre_comercio', 'fecha_apertura']
     success_url =  reverse_lazy('comercios')
     
 class EliminarComercio(LoginRequiredMixin, DeleteView):
@@ -26,7 +27,7 @@ class EditarComercio(LoginRequiredMixin, UpdateView):
     model = Comercio
     template_name = "comercios/editar_comercio.html"
     success_url =  reverse_lazy('comercios')
-    fields = ['representante_legal', 'nombre_comercio', 'fecha_apertura']
+    fields = ['representante_legal', 'nombre_comercio', 'fecha_apertura', 'imagen']
     
 class DetalleComercio(DetailView):
      model = Comercio

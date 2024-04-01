@@ -9,6 +9,9 @@ Detalle del comercio: {{comercios}}
     <li>Representante legal: {{comercio.representante_legal}}</li>
     <li>Nombre comercio: {{comercio.nombre_comercio}}</li>
     <li>Fecha de apertura: {{comercio.fecha_apertura}} </li>
+    {% if comercio.imagen %}
+    <img src="{{ comercio.imagen.url }}" alt="" height="50px">
+    {% endif %}
     <a href={% url 'editar_comercio' comercio.id %}>Editar</a>|
     <a href={% url 'eliminar_comercio' comercio.id %}>Eliminar</a> |
 </ul>

@@ -14,6 +14,9 @@ Listado de comercios
 <ul>
     {% for comercio in comercios %}
         <li>{{comercio}} |
+            {% if comercio.imagen %}
+            <img src="{{ comercio.imagen.url }}" alt="" height="50px">
+            {% endif %}
             <a href="{% url 'detalle_comercio' comercio.id %}">Detalle</a>
             <a href={% url 'editar_comercio' comercio.id %}>Editar</a>|
             <a href={% url 'eliminar_comercio' comercio.id %}>Eliminar</a> |  
